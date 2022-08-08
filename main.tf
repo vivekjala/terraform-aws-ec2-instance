@@ -1,7 +1,7 @@
 locals {
   is_t_instance_type = replace(var.instance_type, "/^t(2|3|3a){1}\\..*$/", "1") == "1" ? true : false
 }
-
+#using locals
 resource "aws_instance" "this" {
   count = var.create && !var.create_spot_instance ? 1 : 0
 
